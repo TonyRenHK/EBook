@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+  <head>
+    <script src="https://cdn.anychart.com/js/7.13.0/anychart-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.anychart.com/css/7.13.0/anychart-ui.min.css" />
+    <style>
+      html, body, #container {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container"></div>
+    <script>
+
+anychart.onDocumentReady(function () {
+    chart = anychart.line([1.1, 1.4, 1.3, 1.6]);
+
+    // defines edition.
+    if (!anychart.DEVELOP){
+      chart.title("It is production edition");
+    }else{
+      chart.title("It is developer edition");
+    }
+
+    chart.container("container");
+    chart.draw();
+});
+    
+    </script>
+  </body>
+</html>
